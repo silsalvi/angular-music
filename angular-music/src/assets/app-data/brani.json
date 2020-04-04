@@ -6,18 +6,18 @@
       { "id": 1, "nomeArte": "Lazza" },
       { "id": 2, "nomeArte": "Nitro" }
     ],
-    "path": "angular-music/src/assets/app-data/okay.mp3"
+    "path": "src/assets/app-data/okay.mp3"
   },
   {
     "nome": "californication",
     "genere": [{ "nomeGenere": "rock" }],
     "artisti": [{ "id": 3, "nomeArte": "Red Hot Chili Peppers" }],
-    "path": "angular-music/src/assets/app-data/californication.mp3"
+    "path": "src/assets/app-data/californication.mp3"
   },
   {
     "nome": "chop suey",
     "genere": [{ "nomeGenere": "metal" }],
     "artisti": [{ "id": 3, "nomeArte": "Red Hot Chili Peppers" }],
-    "path": "angular-music/src/assets/app-data/chop suey.mp3"
+    "path": "src/assets/app-data/chop suey.mp3"
   }
 ]
