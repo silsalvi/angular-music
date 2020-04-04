@@ -3,5 +3,5 @@ export class Artista {
   nomeArte: string;
   nome?: string;
   cognome?: string;
-  dataNascita: Date;
+  dataNascita?: Date;
 }
