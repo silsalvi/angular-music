@@ -3,8 +3,8 @@ import { Genere } from "./generi";
 export class Brano {
   nome: string;
   genere: Genere[];
-  durata: number;
   artisti: Artista[];
-  dataUscita: Date;
+  dataUscita?: Date;
   descrizione?: string;
+  path: string;
 }
