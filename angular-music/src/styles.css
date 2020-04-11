@@ -2,6 +2,11 @@
 @import "~primeng/resources/themes/nova-light/theme.css";
 @import "~primeng/resources/primeng.min.css";
 @import "~primeicons/primeicons.css";
-.dark-body {
-  background-color: black;
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100&display=swap");
+.dark {
+  background-color: #141412;
+}
+* {
+  font-family: "Spartan", sans-serif;
+  color: #babaaf;
 }

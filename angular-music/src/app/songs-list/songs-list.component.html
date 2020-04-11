@@ -1,0 +1,15 @@
+<div style="overflow-x: hidden;">
+  <div class="row" *ngFor="let brano of brani">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 mb-0">
+      <p>
+        {{ brano.nome.toUpperCase() }}
+      </p>
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+      <p>
+        <small>{{ mostraArtisti(brano) }}</small>
+      </p>
+    </div>
+    <hr />
+  </div>
+</div>

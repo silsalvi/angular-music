@@ -1,9 +1,20 @@
 [
   {
+    "id": 1,
+    "nome": "okay",
+    "genere": [{ "nomeGenere": "rap" }, { "nomeGenere": "trap" }],
+    "artisti": [
+      { "id": 1, "nomeArte": "Nitro" },
+      { "id": 2, "nomeArte": "Lazza" }
+    ],
+    "path": "../assets/app-data/okay.mp3",
+    "copertina": "../assets/app-data/copertine/okay.jpg"
+  },
+  {
     "id": 3,
     "nome": "chop suey",
     "genere": [{ "nomeGenere": "metal" }],
-    "artisti": [{ "id": 3, "nomeArte": "Red Hot Chili Peppers" }],
+    "artisti": [{ "id": 3, "nomeArte": "System of a Down" }],
     "path": "../assets/app-data/chop suey.mp3",
     "copertina": "../assets/app-data/copertine/chop suey.jpg"
   },
@@ -11,19 +22,8 @@
     "id": 2,
     "nome": "californication",
     "genere": [{ "nomeGenere": "rock" }],
-    "artisti": [{ "id": 3, "nomeArte": "Red Hot Chili Peppers" }],
+    "artisti": [{ "id": 4, "nomeArte": "Red Hot Chili Peppers" }],
     "path": "../assets/app-data/californication.mp3",
-    "copertina": "copertine/californication.jpg"
-  },
-  {
-    "id": 1,
-    "nome": "okay",
-    "genere": [{ "nomeGenere": "rap" }, { "nomeGenere": "trap" }],
-    "artisti": [
-      { "id": 1, "nomeArte": "Lazza" },
-      { "id": 2, "nomeArte": "Nitro" }
-    ],
-    "path": "../assets/app-data/okay.mp3",
-    "copertina": "copertine/okay.jpg"
+    "copertina": "../assets/app-data/copertine/californication.jpg"
   }
 ]
