@@ -8,8 +8,9 @@ import { LoadingScreenComponent } from "./loading-screen/loading-screen.componen
 import { ButtonModule } from "primeng/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { SongsListComponent } from './songs-list/songs-list.component';
+import { PlayerComponent } from './player/player.component';
 @NgModule({
-  declarations: [AppComponent, HomePlayerComponent, SongsListComponent],
+  declarations: [AppComponent, HomePlayerComponent, SongsListComponent, PlayerComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,
