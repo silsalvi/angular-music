@@ -1,9 +1,19 @@
-<div class="button-group">
-  <p-button>
-    <span class="pi pi-step-backward-alt"></span>
-  </p-button>
+<div class="container-fluid" *ngIf="brano">
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
+      <p>{{ brano.nome.toUpperCase() }}</p>
+    </div>
+  </div>
 
-  <p-button [icon]="isPlaying ? 'pi pi-pause' : 'pi pi-play'"> </p-button>
-
-  <p-button [icon]="'pi pi-step-forward-alt'"></p-button>
+  <div class="button-group">
+    <button class="btn btn-outline-dark m-1">
+      <span class="pi pi-step-backward-alt"></span>
+    </button>
+    <button (click)="togglePlayer(isPlaying)" class="btn btn-outline-dark m-1">
+      <span [class]="isPlaying ? 'pi pi-pause' : 'pi pi-play'"></span>
+    </button>
+    <button class="btn btn-outline-dark m-1">
+      <span class="pi pi-step-forward-alt"></span>
+    </button>
+  </div>
 </div>

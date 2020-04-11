@@ -1,30 +1,52 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Input } from "@angular/core";
 import { Howl } from "howler";
-import { RestApiService } from "../services/rest-api.service";
 import { Brano } from "../model/brano";
+import { PlayerService } from "../services/player.service";
 @Component({
   selector: "app-player",
   templateUrl: "./player.component.html",
   styleUrls: ["./player.component.css"],
 })
 export class PlayerComponent implements OnInit {
-  isPlaying: boolean;
+  @Input() brano: Brano;
+  player: Howl;
+  isPlaying: boolean = false;
+  constructor(private playerService: PlayerService) {}
 
-  //path dei brani recuperati dalla chiamata
-  sources_name: string[] = [];
-  constructor(private restApiService: RestApiService) {}
-
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.recuperaBrano();
+  }
 
   /**
-   * prende i path dei brani
+   * recupera il brano selezionato dalla lista
    */
-  loadSong(brani: Brano[]) {
-    brani.forEach((brano) => {
-      this.sources_name.push(brano.path);
+  recuperaBrano() {
+    this.playerService.brano$.subscribe((response) => {
+      this.brano = response;
+      this.playSong();
     });
-    const sound = new Howl({
-      src: this.sources_name,
+  }
+  /**
+   * avvia il brano
+   */
+  playSong() {
+    if (this.player) {
+      this.isPlaying = false;
+      this.player.stop();
+    }
+    this.player = new Howl({
+      src: [this.brano.path],
     });
+
+    this.isPlaying = true;
+    this.player.play();
+  }
+  togglePlayer(pause: boolean) {
+    this.isPlaying = !pause;
+    if (pause) {
+      this.player.pause();
+    } else {
+      this.player.play();
+    }
   }
 }
