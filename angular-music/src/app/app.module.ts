@@ -7,16 +7,23 @@ import { HomePlayerComponent } from "./home/home.component";
 import { LoadingScreenComponent } from "./loading-screen/loading-screen.component";
 import { ButtonModule } from "primeng/button";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { SongsListComponent } from './songs-list/songs-list.component';
-import { PlayerComponent } from './player/player.component';
+import { SongsListComponent } from "./songs-list/songs-list.component";
+import { PlayerComponent } from "./player/player.component";
+import { SliderModule } from "primeng/slider";
 @NgModule({
-  declarations: [AppComponent, HomePlayerComponent, SongsListComponent, PlayerComponent],
+  declarations: [
+    AppComponent,
+    HomePlayerComponent,
+    SongsListComponent,
+    PlayerComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     ButtonModule,
     BrowserAnimationsModule,
+    SliderModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

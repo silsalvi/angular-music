@@ -6,13 +6,11 @@ import { Subject } from "rxjs";
   providedIn: "root",
 })
 export class PlayerService {
-  private _branoAttuale: Brano;
+  branoAttivo: Brano;
   listaArtisti: string = "";
   isLoadedBrano: boolean = false;
-
   branoSubject = new Subject<Brano>();
   brano$ = this.branoSubject.asObservable();
-
   constructor() {}
 
   /**
@@ -45,6 +43,7 @@ export class PlayerService {
   riproduciBrano(brano: Brano) {
     if (brano) {
       this.branoSubject.next(brano);
+      this.branoAttivo = brano;
     } else {
       this.branoSubject.error("Brano non caricato correttamente");
     }
