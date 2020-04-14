@@ -13,7 +13,8 @@ export class PlayerComponent implements OnInit {
   branoAttivo: Brano;
   player: Howl;
   isPlaying: boolean = false;
-  @ViewChild("slider") slider: Slider;
+  @ViewChild("slider", { static: false }) slider: Slider;
+  progress: number;
   constructor(
     private playerService: PlayerService,
     private restApiService: RestApiService
@@ -42,6 +43,9 @@ export class PlayerComponent implements OnInit {
     }
     this.player = new Howl({
       src: [this.branoAttivo.path],
+      onplay: () => {
+        this.updateSlider();
+      },
     });
 
     this.isPlaying = true;
@@ -75,14 +79,15 @@ export class PlayerComponent implements OnInit {
     let duration = this.player.duration();
     this.player.seek(duration * (nuovoValore / 100));
   }
+
   updateSlider() {
-    let interval = setInterval(() => {
-      this.slider.value =
-        this.slider.value + Math.floor(this.player.duration() * 10) + 1;
-      if (this.slider.value >= 100) {
-        this.slider.value = 100;
-        clearInterval(interval);
-      }
-    }, 2000);
+    if (this.isPlaying) {
+      let seek: any = this.player.seek();
+      console.log(seek);
+      this.slider.value = (seek / this.player.duration()) * 100 || 0;
+      setTimeout(() => {
+        this.updateSlider();
+      }, 1000);
+    }
   }
 }
